@@ -1,4 +1,8 @@
 .{
     .name = "zig-tsserver",
     .version = "0.0.1",
+    .paths = .{
+        "src",
+        "build.zig",
+    },
 }

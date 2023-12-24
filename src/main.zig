@@ -96,7 +96,7 @@ const TSServer = struct {
         try r.skipUntilDelimiterOrEof('\n');
         try r.skipUntilDelimiterOrEof('\n');
         var al = std.ArrayList(u8).init(self.allocator);
-        var al_writer = al.writer();
+        const al_writer = al.writer();
         try r.streamUntilDelimiter(al_writer, '\n', null);
         const parsed = try std.json.parseFromSlice(
             Response(StatusResponseBody),
@@ -147,7 +147,7 @@ const TSServer = struct {
         try r.skipUntilDelimiterOrEof('\n');
         try r.skipUntilDelimiterOrEof('\n');
         var al = std.ArrayList(u8).init(self.allocator);
-        var al_writer = al.writer();
+        const al_writer = al.writer();
         try r.streamUntilDelimiter(al_writer, '\n', null);
         const parsed = try std.json.parseFromSlice(
             Response(ReferencesResponseBody),
